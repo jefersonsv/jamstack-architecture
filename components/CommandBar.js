@@ -1,5 +1,6 @@
 import { Command } from 'cmdk';
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 function CommandBar({ opened, caption, items, placeholder, style, isFixed }) {
   const [open, setOpen] = useState();
@@ -103,5 +104,14 @@ function CommandBar({ opened, caption, items, placeholder, style, isFixed }) {
     </>
   );
 }
+
+CommandBar.propTypes = {
+  caption: PropTypes.string,
+  items: PropTypes.array,
+  placeholder: PropTypes.string,
+  opened: PropTypes.bool,
+  style: PropTypes.any,
+  isFixed: PropTypes.bool,
+};
 
 export default CommandBar;

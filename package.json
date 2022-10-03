@@ -17,12 +17,16 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@emotion/babel-plugin": "^11.10.2",
     "@emotion/css": "^11.10.0",
     "@emotion/react": "^11.10.4",
+    "@emotion/server": "^11.10.0",
     "@emotion/styled": "^11.10.4",
     "@trivago/prettier-plugin-sort-imports": "^3.3.0",
     "animate.css": "^4.1.1",
     "autoprefixer": "^10.4.12",
+    "babel-plugin-macros": "^3.1.0",
+    "clsx": "^1.2.1",
     "cmdk": "^0.1.20",
     "eslint": "8.24.0",
     "eslint-config-next": "12.3.1",
@@ -38,6 +42,7 @@
     "postcss": "^8.4.17",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
+    "prop-types": "^15.8.1",
     "responsive-loader": "^3.1.1",
     "rimraf": "^3.0.2",
     "sass": "^1.55.0",
@@ -46,6 +51,7 @@
     "short-uuid": "^4.2.0",
     "svg-sprite-loader": "^6.0.11",
     "tailwindcss": "^3.1.8",
+    "twin.macro": "^2.8.2",
     "webp-loader": "^0.6.0"
   }
 }

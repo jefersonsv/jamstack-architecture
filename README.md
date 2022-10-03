@@ -6,13 +6,14 @@
 - Build-in Unoptimized Image if you prefer to use
 - Windows batch files to run, build and export
 - Serve static exported distribution locally by [Serve](https://github.com/vercel/serve)
-- Custom build directory [distDir](https://nextjs.org/docs/api-reference/next.config.js/setting-a-custom-build-directory)
 - Vscode preset settings and extensions
 - Great libraries e.g.: lodash, short-uuid, animate.css, @emotion/styled
 - Opinionated Code Formatter [Prettier](https://prettier.io/)) and prettier tailwinddss plugin
 - Command menu [cmdk](https://www.npmjs.com/package/cmdk)
 - Prettier sort imports [Trivago plugin](https://github.com/trivago/prettier-plugin-sort-imports#readme)
 - Eslint with prettier.io and next.js
+- The magic of Tailwind with the flexibility of css-in-js. [Twind macro](https://github.com/ben-rogerson/twin.macro)
+- Added support for DummyImage
 
 # Getting started
 
@@ -22,11 +23,85 @@ npx create-next-app jamstack-architecture --use-pnpm --example "https://github.c
 
 pnpm install next-optimized-images imagemin-mozjpeg@9.0.0 imagemin-optipng imagemin-gifsicle imagemin-svgo@9.0.0 svg-sprite-loader webp-loader lqip-loader responsive-loader jimp image-trace-loader sharp --save-dev
 
-# Patterns
+```js next.config.js
+const withOptimizedImages = require('next-optimized-images');
+
+const nextConfig = withOptimizedImages({
+  images: {
+    disableStaticImages: true,
+    unoptimized: true,
+  },
+  responsive: {
+    adapter: require('responsive-loader/sharp'),
+    format: 'webp',
+  },
+});
+
+module.exports = nextConfig;
+```
+
+# Vscode settings
+
+```json settings.json
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnSave": true,
+  "files.exclude": {
+    "node_modules": true,
+    ".next": true,
+    "out": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
+```
+
+# Unoptimized Images
+
+```js next.config.js
+const nextConfig = {
+  images: {
+    loader: 'custom',
+  },
+};
+
+module.exports = nextConfig;
+```
+
+# Next.js config file
+
+```js next.config.js
+const withOptimizedImages = require('next-optimized-images');
+
+/** @type {import('next').NextConfig} */
+const nextConfig = withOptimizedImages({
+  reactStrictMode: true,
+  swcMinify: true,
+  images: {
+    loader: 'custom',
+  },
+  images: {
+    disableStaticImages: true,
+    unoptimized: true,
+  },
+  responsive: {
+    adapter: require('responsive-loader/sharp'),
+    format: 'webp',
+  },
+});
+
+module.exports = nextConfig;
+```
+
+a
+
+# Design Patterns
 
 ## Responsive Design
 
 https://tailwindcss.com/docs/responsive-design
+https://worship.agency/mobile-screen-sizes-for-2021
 
 ## Markdown
 
@@ -63,7 +138,45 @@ module.exports = {
 @tailwind utilities;
 ```
 
+## twin macro
+
+-- https://github.com/ben-rogerson/twin.macro
+-- https://github.com/ben-rogerson/twin.examples/tree/master/next-emotion
+
+pnpm install --save-dev tailwindcss postcss autoprefixer
+pnpm install --save-dev @emotion/react @emotion/styled @emotion/css @emotion/server
+pnpm install --save-dev twin.macro @emotion/babel-plugin babel-plugin-macros
+
+```js
+// babel-plugin-macros.config.js
+module.exports = {
+  twin: {
+    preset: 'emotion',
+  },
+};
+```
+
+```js
+// .babelrc.js
+module.exports = {
+  presets: [
+    [
+      'next/babel',
+      {
+        'preset-react': {
+          runtime: 'automatic',
+          importSource: '@emotion/react',
+        },
+      },
+    ],
+  ],
+  plugins: ['@emotion/babel-plugin', 'babel-plugin-macros'],
+};
+```
+
 # Icons
+
+Free icon pack
 
 ## SVG
 
@@ -75,13 +188,17 @@ Command bar
 
 # Libraries
 
+pnpm install --save-dev prop-types
 pnpm install --save-dev lodash
+pnpm install --save-dev clsx
 pnpm install --save-dev short-uuid
 pnpm install --save-dev cmdk sass
 pnpm install --save-dev animate.css
+pnpm install --save-dev tailwindcss postcss autoprefixer
 pnpm install --save-dev prettier
 pnpm install --save-dev prettier-plugin-tailwindcss
 pnpm install --save-dev @trivago/prettier-plugin-sort-imports
 pnpm install --save-dev eslint-config-prettier
 pnpm install --save-dev eslint-config-next
-pnpm install --save-dev @emotion/styled @emotion/react
+pnpm install --save-dev @emotion/react @emotion/styled @emotion/css @emotion/server
+pnpm install --save-dev twin.macro @emotion/babel-plugin babel-plugin-macros

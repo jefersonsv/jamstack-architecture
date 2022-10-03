@@ -8,17 +8,15 @@ const searchItems = [
   { icon: <UmbrellaIcon />, label: 'label 3', link: '/' },
 ];
 
-const Cmdk = () => {
-  return (
-    <>
-      <CommandBar
-        isFixed={true}
-        items={searchItems}
-        caption={'Caption of dialog'}
-        placeholder={'Type something...'}
-      />
-    </>
-  );
-};
+const Cmdk = () => (
+  <>
+    <CommandBar
+      caption={'Caption of dialog'}
+      isFixed={true}
+      items={searchItems}
+      placeholder={'Type something...'}
+    />
+  </>
+);
 
 export default Cmdk;

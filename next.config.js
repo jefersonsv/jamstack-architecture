@@ -2,20 +2,19 @@ const withOptimizedImages = require('next-optimized-images');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = withOptimizedImages({
-  reactStrictMode: true,
+  reactStrictMode: false,
   swcMinify: true,
   distDir: 'dist',
   images: {
-      loader: 'custom',
-  },
-  images: {
+    domains: ['dummyimage.com'],
+    loader: 'custom',
     disableStaticImages: true,
     unoptimized: true,
   },
   responsive: {
     adapter: require('responsive-loader/sharp'),
-    format: "webp",
-  }
-})
+    format: 'webp',
+  },
+});
 
-module.exports = nextConfig
+module.exports = nextConfig;
