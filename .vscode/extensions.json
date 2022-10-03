@@ -1,3 +1,7 @@
 {
-  "recommendations": ["yzhang.markdown-all-in-one", "esbenp.prettier-vscode"]
+  "recommendations": [
+    "yzhang.markdown-all-in-one",
+    "esbenp.prettier-vscode",
+    "muhajirframe.tailwind-styled-snippets"
+  ]
 }

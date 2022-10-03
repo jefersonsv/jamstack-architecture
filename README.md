@@ -8,6 +8,11 @@
 - Serve static exported distribution locally by [Serve](https://github.com/vercel/serve)
 - Custom build directory [distDir](https://nextjs.org/docs/api-reference/next.config.js/setting-a-custom-build-directory)
 - Vscode preset settings and extensions
+- Great libraries e.g.: lodash, short-uuid, animate.css, @emotion/styled
+- Opinionated Code Formatter [Prettier](https://prettier.io/)) and prettier tailwinddss plugin
+- Command menu [cmdk](https://www.npmjs.com/package/cmdk)
+- Prettier sort imports [Trivago plugin](https://github.com/trivago/prettier-plugin-sort-imports#readme)
+- Eslint with prettier.io and next.js
 
 # Getting started
 
@@ -69,3 +74,4 @@ pnpm install --save-dev prettier-plugin-tailwindcss
 pnpm install --save-dev @trivago/prettier-plugin-sort-imports
 pnpm install --save-dev eslint-config-prettier
 pnpm install --save-dev eslint-config-next
+pnpm install --save-dev @emotion/styled @emotion/react
