@@ -4,6 +4,7 @@ const withOptimizedImages = require('next-optimized-images');
 const nextConfig = withOptimizedImages({
   reactStrictMode: true,
   swcMinify: true,
+  distDir: 'dist',
   images: {
       loader: 'custom',
   },

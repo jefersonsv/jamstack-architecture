@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "clean": "rimraf .next && rimraf dist",
+    "purge": "npx rimraf .next && npx rimraf dist && npx rimraf node_modules && npx rimraf pnpm-lock.yaml",
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "serve": "serve dist"
   },
   "dependencies": {
     "next": "12.3.1",
@@ -15,6 +18,20 @@
   },
   "devDependencies": {
     "eslint": "8.24.0",
-    "eslint-config-next": "12.3.1"
+    "eslint-config-next": "12.3.1",
+    "image-trace-loader": "^1.0.2",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-mozjpeg": "9.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "9.0.0",
+    "jimp": "^0.16.2",
+    "lqip-loader": "^2.2.1",
+    "next-optimized-images": "^2.6.2",
+    "responsive-loader": "^3.1.1",
+    "rimraf": "^3.0.2",
+    "serve": "^14.0.1",
+    "sharp": "^0.31.1",
+    "svg-sprite-loader": "^6.0.11",
+    "webp-loader": "^0.6.0"
   }
 }
