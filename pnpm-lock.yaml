@@ -27,6 +27,7 @@ specifiers:
   react-dom: 18.2.0
   responsive-loader: ^3.1.1
   rimraf: ^3.0.2
+  sass: ^1.55.0
   serve: ^14.0.1
   sharp: ^0.31.1
   short-uuid: ^4.2.0
@@ -35,7 +36,7 @@ specifiers:
   webp-loader: ^0.6.0
 
 dependencies:
-  next: 12.3.1_react-dom@18.2.0+react@18.2.0
+  next: 12.3.1_d3306206c530f0e7c765c6a031d3445a
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
 
@@ -63,6 +64,7 @@ devDependencies:
   prettier-plugin-tailwindcss: 0.1.13_prettier@2.7.1
   responsive-loader: 3.1.1_jimp@0.16.2+sharp@0.31.1
   rimraf: 3.0.2
+  sass: 1.55.0
   serve: 14.0.1
   sharp: 0.31.1
   short-uuid: 4.2.0
@@ -4485,6 +4487,10 @@ packages:
       loader-utils: 1.4.0
     dev: true
 
+  /immutable/4.1.0:
+    resolution: {integrity: sha512-oNkuqVTA8jqG1Q6c+UglTOD1xhC1BtjKI7XkCXRkZHrN5m18/XsnUp8Q89GkQO/z+0WjonSvl0FLhDYftp46nQ==}
+    dev: true
+
   /import-fresh/3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
     engines: {node: '>=6'}
@@ -5539,7 +5545,7 @@ packages:
       - webpack
     dev: true
 
-  /next/12.3.1_react-dom@18.2.0+react@18.2.0:
+  /next/12.3.1_d3306206c530f0e7c765c6a031d3445a:
     resolution: {integrity: sha512-l7bvmSeIwX5lp07WtIiP9u2ytZMv7jIeB8iacR28PuUEFG5j0HGAPnMqyG5kbZNBG2H7tRsrQ4HCjuMOPnANZw==}
     engines: {node: '>=12.22.0'}
     hasBin: true
@@ -5563,6 +5569,7 @@ packages:
       postcss: 8.4.14
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+      sass: 1.55.0
       styled-jsx: 5.0.7_react@18.2.0
       use-sync-external-store: 1.2.0_react@18.2.0
     optionalDependencies:
@@ -6759,6 +6766,16 @@ packages:
 
   /safer-buffer/2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
+    dev: true
+
+  /sass/1.55.0:
+    resolution: {integrity: sha512-Pk+PMy7OGLs9WaxZGJMn7S96dvlyVBwwtToX895WmCpAOr5YiJYEUJfiJidMuKb613z2xNWcXCHEuOvjZbqC6A==}
+    engines: {node: '>=12.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.5.3
+      immutable: 4.1.0
+      source-map-js: 1.0.2
     dev: true
 
   /sax/1.2.4:

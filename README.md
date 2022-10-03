@@ -63,11 +63,21 @@ module.exports = {
 @tailwind utilities;
 ```
 
+# Icons
+
+## SVG
+
+https://www.svgrepo.com/
+
+## Cmdk
+
+Command bar
+
 # Libraries
 
 pnpm install --save-dev lodash
 pnpm install --save-dev short-uuid
-pnpm install --save-dev cmdk
+pnpm install --save-dev cmdk sass
 pnpm install --save-dev animate.css
 pnpm install --save-dev prettier
 pnpm install --save-dev prettier-plugin-tailwindcss
