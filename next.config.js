@@ -4,7 +4,6 @@ const withOptimizedImages = require('next-optimized-images');
 const nextConfig = withOptimizedImages({
   reactStrictMode: false,
   swcMinify: true,
-  distDir: 'dist',
   images: {
     domains: ['dummyimage.com'],
     loader: 'custom',
