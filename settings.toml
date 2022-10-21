@@ -1,0 +1,8 @@
+# Project settings
+
+[group_string]
+variable1 = "string content"
+
+[group_bool]
+variable_a = true
+variable_b = false

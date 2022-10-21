@@ -14,6 +14,8 @@
 - Eslint with prettier.io and next.js
 - The magic of Tailwind with the flexibility of css-in-js. [Twind macro](https://github.com/ben-rogerson/twin.macro)
 - Added support for DummyImage
+- Generate sitemap using Next Sitemap plugin
+- Support .toml settings file
 
 # Getting started
 
@@ -189,7 +191,9 @@ Command bar
 # Libraries
 
 pnpm install --save-dev prop-types
+pnpm install --save-dev react-router-dom
 pnpm install --save-dev lodash
+pnpm install --save-dev toml
 pnpm install --save-dev clsx
 pnpm install --save-dev short-uuid
 pnpm install --save-dev cmdk sass
@@ -202,3 +206,4 @@ pnpm install --save-dev eslint-config-prettier
 pnpm install --save-dev eslint-config-next
 pnpm install --save-dev @emotion/react @emotion/styled @emotion/css @emotion/server
 pnpm install --save-dev twin.macro @emotion/babel-plugin babel-plugin-macros
+pnpm install --save-dev next-sitemap
