@@ -11,7 +11,6 @@ info  - Linting and checking validity of types...
 error - ESLint: Plugin "react-hooks" was conflicted between ".eslintrc » eslint-config-next » plugin:react-hooks/recommended" and "..\..\.eslintrc.js » eslint-config-custom » eslint-config-next » plugin:react-hooks/recommended".
 info  - Creating an optimized production build...
 info  - Disabled SWC as replacement for Babel because of custom Babel configuration ".babelrc.js" https://nextjs.org/docs/messages/swc-disabled
-info  - Using external babel configuration from C:\Users\jefer\DEV\monorepo\apps\jamstack-architecture\.babelrc.js
 info  - Compiled successfully
 info  - Collecting page data...
 info  - Generating static pages (0/9)
@@ -25,11 +24,11 @@ Route (pages)                              Size     First Load JS
 ┌   /_app                                  0 B            84.4 kB
 ├ ○ /404                                   2.64 kB        87.1 kB
 ├ λ /api/hello                             0 B            84.4 kB
-├ ● /sample/[[...slug]]                    292 B          84.7 kB
+├ ● /sample/[[...slug]] (306 ms)           292 B          84.7 kB
 ├   ├ /sample
 ├   ├ /sample/level1
 ├   └ /sample/level1/level2
-├ ○ /sample/cmdk (334 ms)                  13.8 kB        98.2 kB
+├ ○ /sample/cmdk (454 ms)                  13.8 kB        98.2 kB
 ├ ○ /sample/next-index                     6.42 kB        90.8 kB
 ├   └ css/7c9e31c2156353a4.css             706 B
 ├ ○ /sample/optimized-images               684 B          85.1 kB
