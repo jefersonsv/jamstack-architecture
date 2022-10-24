@@ -16,6 +16,7 @@
 - Added support for DummyImage
 - Generate sitemap using Next Sitemap plugin
 - Support .toml settings file
+- Connection to Mongodb
 
 # Getting started
 
@@ -207,3 +208,4 @@ pnpm install --save-dev eslint-config-next
 pnpm install --save-dev @emotion/react @emotion/styled @emotion/css @emotion/server
 pnpm install --save-dev twin.macro @emotion/babel-plugin babel-plugin-macros
 pnpm install --save-dev next-sitemap
+pnpm install --save-dev mongodb
