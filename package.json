@@ -1,7 +1,6 @@
 {
   "name": "jamstack-architecture",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "clean": "rimraf .next && rimraf out",
     "purge": "npx rimraf .next && npx rimraf out && npx rimraf node_modules && npx rimraf pnpm-lock.yaml",
