@@ -17,10 +17,13 @@
 - Generate sitemap using Next Sitemap plugin
 - Support .toml settings file
 - Connection to Mongodb
+- Auto install peers
+- Enable pre and post scripts
 
 # Getting started
 
 npx create-next-app jamstack-architecture --use-pnpm --example "https://github.com/jefersonsv/jamstack-architecture"
+npx create-next-app trend-shop-web --use-pnpm --example "https://github.com/jefersonsv/jamstack-architecture"
 
 # Install the correct version of next-optimized-images
 
