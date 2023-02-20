@@ -23,7 +23,6 @@
 # Getting started
 
 npx create-next-app jamstack-architecture --use-pnpm --example "https://github.com/jefersonsv/jamstack-architecture"
-npx create-next-app trend-shop-web --use-pnpm --example "https://github.com/jefersonsv/jamstack-architecture"
 
 # Install the correct version of next-optimized-images
 
@@ -194,21 +193,19 @@ Command bar
 
 # Libraries
 
+pnpm install --save-dev prettier prettier-plugin-tailwindcss @trivago/prettier-plugin-sort-imports
+pnpm install --save-dev eslint-config-prettier eslint-config-next
 pnpm install --save-dev prop-types
-pnpm install --save-dev react-router-dom
-pnpm install --save-dev lodash
-pnpm install --save-dev toml
 pnpm install --save-dev clsx
+pnpm install --save-dev next-sitemap
+pnpm install --save-dev lodash
+
+pnpm install --save-dev react-router-dom
+pnpm install --save-dev toml
 pnpm install --save-dev short-uuid
 pnpm install --save-dev cmdk sass
 pnpm install --save-dev animate.css
-pnpm install --save-dev tailwindcss postcss autoprefixer
-pnpm install --save-dev prettier
-pnpm install --save-dev prettier-plugin-tailwindcss
-pnpm install --save-dev @trivago/prettier-plugin-sort-imports
-pnpm install --save-dev eslint-config-prettier
-pnpm install --save-dev eslint-config-next
+
 pnpm install --save-dev @emotion/react @emotion/styled @emotion/css @emotion/server
 pnpm install --save-dev twin.macro @emotion/babel-plugin babel-plugin-macros
-pnpm install --save-dev next-sitemap
 pnpm install --save-dev mongodb
