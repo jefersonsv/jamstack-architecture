@@ -4,25 +4,44 @@ All path are relative to the root of monorepo
 
 # Create next.js
 
+The command `pnpm create next-app` will ask for the project-name in a wizard
+
 ```bash
 cd apps
 pnpm create next-app
-cd project-name
+cd <project-name>
+
+type nul > .npmrc
+
+mkdir .vscode
+type nul > .vscode\settings.json
+type nul > .vscode\extensions.json
 ```
 
-# Change the Packages.json
+** Check if need to run gitignore **
+
+```
+pnpx gitignore node
+```
+
+# Change the package.json
 
 ```json packages.json
-"packageManager": "pnpm@7.13.2",
-"scripts": {
-    "clean": "rimraf .next && rimraf out",
-    "purge": "npx rimraf .next && npx rimraf out && npx rimraf node_modules && npx rimraf pnpm-lock.yaml",
-    "postbuild": "next-sitemap && next export",
-    "serve": "serve out"
-}
+    "packageManager": "pnpm@7.13.2",
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "postbuild": "next-sitemap",
+        "export": "next export -o ../driving-test-api/wwwroot"
+    },
 ```
 
 # Vscode settings
+
+- Run prettier on save
+- Run organize imports on save
 
 ```json .vscode\settings.json
 {
@@ -32,7 +51,10 @@ cd project-name
     "out": true
   },
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  }
 }
 ```
 
@@ -110,7 +132,10 @@ module.exports = {
 ```
 
 ```css
-/* /src/app/globals.css */
+/* 
+  /src/app/globals.css 
+  /src/styles/globals.css
+*/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -132,6 +157,8 @@ module.exports = {
 pnpm install --save-dev jest ts-jest babel-jest @babel/preset-env
 ```
 
+**Why add the babel.config?**
+
 ```js
 // babel.config.js
 module.exports = { presets: ['@babel/preset-env'] };
@@ -148,22 +175,48 @@ module.exports = {
 };
 ```
 
-```json
-// package.json
-{
-  "scripts": {
-    "test": "jest"
-  }
-}
-```
-
 # Install libraries
 
 ```bash
-pnpm install --save-dev prettier prettier-plugin-tailwindcss @trivago/prettier-plugin-sort-imports
+pnpm install --save-dev prettier prettier-plugin-tailwindcss
 pnpm install --save-dev eslint-config-prettier eslint-config-next
-pnpm install --save-dev prop-types
-pnpm install --save-dev clsx
-pnpm install --save-dev next-sitemap
-pnpm install --save-dev localforage odash react-hook-form react-number-format
+pnpm install --save-dev prop-types lodash
+pnpm install --save-dev clsx animate.css
+pnpm install --save-dev next-sitemap @next/font
+pnpm install --save-dev localforage odash react-hook-form react-number-format react-select
+pnpm install --save-dev mongodb
 ```
+
+```others libraries
+pnpm install --save-dev short-uuid
+pnpm install --save-dev cmdk sass
+pnpm install --save-dev toml
+pnpm install --save-dev react-router-dom
+pnpm install --save-dev eslint-config-prettier
+pnpm install --save-dev eslint-config-next
+```
+
+# To use google-map-react
+
+Turn off the reactStrictMode in the
+
+```
+pnpm install --save-dev google-map-react
+```
+
+```next.config.js
+  reactStrictMode: false,
+```
+
+# utils
+
+## Design
+
+https://rgbacolorpicker.com/hex-to-rgba
+https://coolors.co/palettes/trending
+
+## SVG
+
+SVG images to use
+
+- https://www.svgrepo.com/

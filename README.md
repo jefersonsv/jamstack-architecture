@@ -10,7 +10,7 @@
 - Great libraries e.g.: lodash, short-uuid, animate.css, @emotion/styled
 - Opinionated Code Formatter [Prettier](https://prettier.io/)) and prettier tailwinddss plugin
 - Command menu [cmdk](https://www.npmjs.com/package/cmdk)
-- Prettier sort imports [Trivago plugin](https://github.com/trivago/prettier-plugin-sort-imports#readme)
+- Vscode sorting and removed unused imports
 - Eslint with prettier.io and next.js
 - The magic of Tailwind with the flexibility of css-in-js. [Twind macro](https://github.com/ben-rogerson/twin.macro)
 - Added support for DummyImage
@@ -193,7 +193,7 @@ Command bar
 
 # Libraries
 
-pnpm install --save-dev prettier prettier-plugin-tailwindcss @trivago/prettier-plugin-sort-imports
+pnpm install --save-dev prettier prettier-plugin-tailwindcss
 pnpm install --save-dev eslint-config-prettier eslint-config-next
 pnpm install --save-dev prop-types
 pnpm install --save-dev clsx
