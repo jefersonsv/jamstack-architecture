@@ -16,6 +16,7 @@ type nul > .npmrc
 mkdir .vscode
 type nul > .vscode\settings.json
 type nul > .vscode\extensions.json
+type nul > .vscode\launch.json
 ```
 
 ** Check if need to run gitignore **
@@ -69,6 +70,39 @@ pnpx gitignore node
 }
 ```
 
+- https://nextjs.org/docs/advanced-features/debugging
+
+```json .vscode\launch.json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Next.js: debug server-side",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run dev"
+    },
+    {
+      "name": "Next.js: debug client-side",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000"
+    },
+    {
+      "name": "Next.js: debug full stack",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run dev",
+      "serverReadyAction": {
+        "pattern": "started server on .+, url: (https?://.+)",
+        "uriFormat": "%s",
+        "action": "debugWithChrome"
+      }
+    }
+  ]
+}
+```
+
 # Install the correct version of next-optimized-images
 
 ```
@@ -80,6 +114,10 @@ const withOptimizedImages = require('next-optimized-images');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = withOptimizedImages({
+  webpack(config) {
+    config.experiments = { ...config.experiments, topLevelAwait: true };
+    return config;
+  },
   experimental: {
     appDir: true,
   },
@@ -220,3 +258,9 @@ https://coolors.co/palettes/trending
 SVG images to use
 
 - https://www.svgrepo.com/
+
+## Geo Location
+
+Find coordinate in map
+
+- https://www.maps.ie/coordinates.html
